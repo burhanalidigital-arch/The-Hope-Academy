@@ -116,3 +116,33 @@ if (callButton) {
     });
 
 }
+document.querySelector(".contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const parentName = this.querySelector('input[placeholder="Parent Name"]').value;
+    const studentName = this.querySelector('input[placeholder="Student Name"]').value;
+    const studentClass = this.querySelector("select").value;
+    const phone = this.querySelector('input[placeholder="Phone Number"]').value;
+    const message = this.querySelector("textarea").value;
+
+    const whatsappMessage =
+        "🎓 THE HOPE ACADEMY - Admission Request%0A%0A" +
+        "👤 Parent Name: " + encodeURIComponent(parentName) + "%0A" +
+        "👨‍🎓 Student Name: " + encodeURIComponent(studentName) + "%0A" +
+        "📚 Class: " + encodeURIComponent(studentClass) + "%0A" +
+        "📞 Phone: " + encodeURIComponent(phone) + "%0A" +
+        "💬 Message: " + encodeURIComponent(message);
+
+    const whatsappNumber = "923214966591";
+
+    window.open(
+        "https://wa.me/" + whatsappNumber + "?text=" + whatsappMessage,
+        "_blank"
+    );
+});
+const successMessage = document.getElementById("success-message");
+
+successMessage.textContent =
+    "✅ Admission request prepared successfully! Please send the message on WhatsApp.";
+
+successMessage.style.display = "block";
