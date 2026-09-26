@@ -5,22 +5,29 @@
 
 
 // Admission / Contact Form
-const contactForm = document.querySelector(".contact-form");
-
-contactForm.addEventListener("submit", function (event) {
-
+function sendAdmissionToWhatsApp(event) {
     event.preventDefault();
 
-    alert(
-        "Thank you for contacting THE HOPE ACADEMY!\n\n" +
-        "Your admission request has been received.\n\n" +
-        "For further information, please call:\n" +
-        "0321-4966591"
+    const parentName = document.getElementById("parentName").value;
+    const studentName = document.getElementById("studentName").value;
+    const studentClass = document.getElementById("studentClass").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
+
+    const whatsappMessage =
+        "Assalam o Alaikum,%0A%0A" +
+        "*THE HOPE ACADEMY - Admission Request*%0A%0A" +
+        "Parent Name: " + encodeURIComponent(parentName) + "%0A" +
+        "Student Name: " + encodeURIComponent(studentName) + "%0A" +
+        "Class: " + encodeURIComponent(studentClass) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Message: " + encodeURIComponent(message);
+
+    window.open(
+        "https://wa.me/923214966591?text=" + whatsappMessage,
+        "_blank"
     );
-
-    contactForm.reset();
-});
-
+}
 
 // =========================
 // Navbar Active Link
