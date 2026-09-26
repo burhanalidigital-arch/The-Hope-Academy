@@ -146,3 +146,30 @@ successMessage.textContent =
     "✅ Admission request prepared successfully! Please send the message on WhatsApp.";
 
 successMessage.style.display = "block";
+function sendAdmissionToWhatsApp(event) {
+event.preventDefault();
+
+const parentName = document.getElementById("parentName").value;
+const studentName = document.getElementById("studentName").value;
+const studentClass = document.getElementById("studentClass").value;
+const phone = document.getElementById("phone").value;
+const message = document.getElementById("message").value;
+
+const whatsappMessage =
+    "Assalam o Alaikum,%0A%0A" +
+    "*THE HOPE ACADEMY - Admission Request*%0A%0A" +
+    "Parent Name: " + encodeURIComponent(parentName) + "%0A" +
+    "Student Name: " + encodeURIComponent(studentName) + "%0A" +
+    "Class: " + encodeURIComponent(studentClass) + "%0A" +
+    "Phone: " + encodeURIComponent(phone) + "%0A" +
+    "Message: " + encodeURIComponent(message);
+
+const whatsappURL =
+    "https://wa.me/923214966591?text=" + whatsappMessage;
+
+window.open(whatsappURL, "_blank");
+
+document.getElementById("success-message").textContent =
+    "Admission request ready. WhatsApp is opening...";
+
+}

@@ -306,58 +306,56 @@
                     Call Now
                 </a>
             </div>
+            <form class="contact-form" onsubmit="sendAdmissionToWhatsApp(event)"><input
+    type="text"
+    id="parentName"
+    placeholder="Parent Name"
+    required
+>
+
+<input
+    type="text"
+    id="studentName"
+    placeholder="Student Name"
+    required
+>
+
+<select id="studentClass" required>
+    <option value="">Select Class</option>
+    <option>Play Group</option>
+    <option>Nursery</option>
+    <option>Prep / KG</option>
+    <option>Grade 1</option>
+    <option>Grade 2</option>
+    <option>Grade 3</option>
+    <option>Grade 4</option>
+    <option>Grade 5</option>
+    <option>Grade 6</option>
+</select>
+
+<input
+    type="tel"
+    id="phone"
+    placeholder="Phone Number"
+    required
+>
+
+<textarea
+    id="message"
+    placeholder="Your Message"
+    rows="5">
+</textarea>
+
+<button type="submit">
+    Submit Admission Request
+</button>
+
+<p id="success-message" class="success-message"></p>
+
+</form>
 
 
-            <form class="contact-form">
-
-                <input
-                    type="text"
-                    placeholder="Parent Name"
-                    required
-                >
-
-                <input
-                    type="text"
-                    placeholder="Student Name"
-                    required
-                >
-
-                <select required>
-
-                    <option value="">
-                        Select Class
-                    </option>
-
-                    <option>Play Group</option>
-                    <option>Nursery</option>
-                    <option>Prep / KG</option>
-                    <option>Grade 1</option>
-                    <option>Grade 2</option>
-                    <option>Grade 3</option>
-                    <option>Grade 4</option>
-                    <option>Grade 5</option>
-                    <option>Grade 6</option>
-
-                </select>
-
-                <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    required
-                >
-
-                <textarea
-                    placeholder="Your Message"
-                    rows="5">
-                </textarea>
-
-                <button type="submit">
-                    Submit Admission Request
-                </button>
-                <p id="success-message" class="success-message"></p>
-
-            </form>
-
+           
         </div>
 
     </section>
